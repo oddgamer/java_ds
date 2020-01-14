@@ -1,0 +1,12 @@
+public class java4 {
+    public static void main(String[] args){
+java3 f1 = new java3(1,2);
+//f1.print();
+//f1.setNum(45);
+//f1.setDen(90);
+//f1.print();
+      java3 f2 = new java3(1,2);
+      //f1.add(f2);
+      f1.multiply(f2);
+    }
+}
