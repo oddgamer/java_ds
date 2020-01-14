@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class ComplexNumbers {
+	int real;
+int img;
+
+public ComplexNumbers (int real , int img){
+    this.real=real;
+    this.img=img;
+}
+
+    public void print(){
+    if(real != 0 &&img>0)
+        System.out.println(real + " +" + " i"+Math.abs(img));
+        else if(img==0)
+            System.out.println(real );
+    else if(real==0 && img>0)
+        System.out.println(real + " -" + " i"+Math.abs(img));
+         else if(real==0 && img<0)
+        System.out.println(real + " -" + " i"+Math.abs(img));
+        else if(real>0 && img==0)
+            System.out.println(real );
+        else if(img<0)
+            System.out.println(real + " -" + " i"+Math.abs(img));
+        
+    }
+    public void plus(ComplexNumbers z1){
+    this.real = this.real + z1.real;
+    this.img = this.img + z1.img;
+
+    }
+    public void multiply(ComplexNumbers z2){
+        int zz = this.real;
+    this.real = (this.real)*(z2.real) - (this.img)*(z2.img);
+    this.img = (this.img)*(z2.real) + (zz)*(z2.img);
+	
+}
+     public static void main(String[] args){
+          Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        int d = sc.nextInt();
+
+        ComplexNumbers c1 = new ComplexNumbers(a,b);
+        ComplexNumbers c2 = new ComplexNumbers(c,d);
+         int e = sc.nextInt();
+        if(e==1){
+            c1.plus(c2);
+        }
+        else
+            c1.multiply(c2);
+        
+     }
+     }
