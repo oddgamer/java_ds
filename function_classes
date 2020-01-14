@@ -1,0 +1,47 @@
+public class java3 {
+    double a;
+    double b;
+    public java3(double c, double d) {
+        this.a = c;
+        this.b = d;
+        simplyfy();
+    }
+    private void simplyfy(){
+        double e = Math.max('a', 'b');
+        double i = 0;
+        for (i = e; i > 0; i--) {
+            if (a % i == 0 && b % i == 0) {
+                a = a / i;
+                b = b / i;
+            }
+        }
+    }
+    public void print() {
+        if (b != 1)
+            System.out.println(a + "/" + b);
+        else {
+            System.out.println(a);
+        }
+    }
+    public void setNum(double n) {
+        this.a=n;
+        b=1;
+        simplyfy();
+        }
+    public void setDen(double de) {
+this.b=de;
+simplyfy();
+    }
+    public void add(java3 abcd){
+        this.a=(this.a)*(abcd.b) + (this.b)*(abcd.a);
+        this.b=(this.b)*(abcd.b);
+        simplyfy();
+        System.out.println(a + "/" + b);
+    }
+    public void multiply(java3 ab){
+        this.a=(this.a)*(ab.a);
+        this.b=(this.b)*(ab.b);
+        simplyfy();
+        System.out.println(a + "/" + b);
+    }
+}
