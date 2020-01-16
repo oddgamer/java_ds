@@ -1,0 +1,42 @@
+public class car extends bike{
+    int gear;
+    int fold;
+    void printout(){
+        if(fold == 1)
+            System.out.println("foldable ");
+        else
+            System.out.println("not foldable ");
+
+        System.out.println("gear " + gear);
+
+    }
+    public static void main(String[] args){
+        bike b = new bike();
+        car c = new car();
+        b.color="yellow";
+        c.color="red";
+        b.capacity = 60;
+        c.capacity = 150;
+        b.wheels = 2;
+        c.wheels = 4;
+        c.fold = 0;
+        c.gear=6;
+        b.print();
+        c.print();
+        c.printout();
+    }
+}
+ class bike {
+    String color;
+    int wheels;
+    int capacity;
+
+
+    void print(){
+        System.out.println("wheels " + wheels);
+        System.out.println("color " + color);
+        System.out.println("capacity " + capacity);
+    }
+
+
+}
