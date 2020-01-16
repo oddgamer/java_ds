@@ -1,0 +1,14 @@
+public class array_main {
+    public static void main(String[] args) {
+array_class f1 = new array_class();
+int i;
+
+for(i=0;i<250;i++){
+    f1.add(i+5);
+}
+f1.get(4);
+f1.set(4,104);
+f1.get(4);
+f1.size();
+    }
+}
