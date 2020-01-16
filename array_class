@@ -1,0 +1,44 @@
+import org.w3c.dom.ls.LSOutput;
+
+public class array_class {
+    int data[];
+ int  ni;
+public array_class(){
+    data=new int[10];
+    ni=0;
+}
+
+
+public void size(){
+    System.out.println(ni);
+}
+public void add(int e){
+    if(ni==data.length)
+        restructure();
+    else{
+    data[ni]=e;
+    ni++;}
+}
+public void restructure(){
+    int temp[]=data;
+    int i=0;
+    data= new int[2*ni];
+    for(i=0;i<ni;i++){
+        data[i]=temp[i];
+    }
+}
+public void set(int index,int data){
+    if(index<ni)
+        this.data[index]=data;
+    else if(index<this.data.length)
+        add(data);
+    else
+        return;
+}
+public void get(int ind){
+    if(ind<data.length)
+        System.out.println(data[ind]);
+    else
+        return;
+}
+}
