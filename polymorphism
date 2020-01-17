@@ -1,0 +1,27 @@
+public class car extends bike{
+    int gear;
+    int fold;
+    public car(){
+
+    }
+    void print(){
+        System.out.println("this is car class");
+    }
+    public static void main(String[] args){
+        bike a= new car();
+        a.print();
+        car c = new car();
+        c.print();
+
+    }
+}
+ class bike {
+    String color;
+    int wheels;
+    int capacity;
+    public bike(){
+    }
+     void print(){
+         System.out.println("this is bike class ");
+     }
+}
