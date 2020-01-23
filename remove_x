@@ -1,0 +1,13 @@
+ public static String addStars(String s) {
+      String str;
+       if(s.length()==0)
+           return "";
+
+        String ans=addStars(s.substring(1));
+        if(s.charAt(0)=='x')
+            return ans ;
+        else return s.charAt(0) + ans;
+
+    }
+    
+    
