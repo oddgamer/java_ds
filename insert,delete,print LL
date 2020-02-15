@@ -1,0 +1,91 @@
+  static void print(Node<Integer> head){
+        while(head!=null){
+            System.out.print(head.data + " ");
+            head=head.next;
+        }
+    }
+
+    static Node<Integer> create(){
+
+        System.out.println("enter element");
+        Scanner sc = new Scanner(System.in);
+        int data = sc.nextInt();
+        Node<Integer> tail=null;
+        Node<Integer> head=null;
+     while(data!=-1){
+Node<Integer> n=new Node<>(data);
+         if(tail==null) {
+             tail = n;
+head=n;
+         }
+         else{
+             tail.next=n;
+             tail=tail.next;
+
+         }
+         data = sc.nextInt();
+     }
+
+return head;
+    }
+
+
+    static void insert(Node<Integer> head,int pos , int data){
+int i=0;
+while(i!=pos-1){
+    head=head.next;
+    i=i+1;
+}
+        Node<Integer> n=new Node<>(data);
+        n.next=head.next;
+head.next=n;
+
+    }
+    public static Node<Integer> deleteIthNode(Node<Integer> head, int i){
+
+        int j=0;
+        int k=0;
+        Node<Integer> temp2=head;
+        while(temp2!=null){
+            temp2=temp2.next;
+            k++;
+
+        }
+        if(i==0&&k==1){
+
+            head=null;
+            return head;
+
+        }
+        if(i==0){
+            head=head.next;
+            return head;
+        }
+
+        if(i>=1 && i<=k-1){
+            Node<Integer> temp=head;
+            while(j!=i-1){
+                temp=temp.next;
+                j++;
+
+            }
+            temp.next=temp.next.next;
+
+            return head;
+        }
+
+ else
+        return head;
+
+    }
+
+
+    public static void main(String args[]) {
+
+Node<Integer> n =create();
+
+print(deleteIthNode(n,5));
+
+
+
+    }
