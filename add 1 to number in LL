@@ -1,0 +1,52 @@
+
+	public static LinkedListNode<Integer> nextLargeNumber(LinkedListNode<Integer> head) {
+   
+      return nextLargeNumber(head,head);
+        
+	}
+    
+   public static LinkedListNode<Integer> nextLargeNumber(LinkedListNode<Integer> head,LinkedListNode<Integer> t){
+       
+       if(head.next==null)
+       {
+           if(head.data==9)
+               head.data=0;
+            else
+                head.data=head.data+1;
+           
+           return head;
+           
+           
+       }
+       
+       
+       
+         nextLargeNumber(head.next,t);
+       
+       
+       if(head.next.data==0){
+       if(head.data<9){
+           head.data=head.data+1;
+           return head;
+           }
+           else{
+               
+               if(head==t){
+                   head.data=0;
+                    LinkedListNode<Integer> t3 = new  LinkedListNode(1);
+                   t3.next=head;
+                   return t3;
+                   
+       
+               }
+               head.data=0;
+               return head;
+           }
+       }
+       else{
+           return head;
+       }
+       
+       
+       
+   }
